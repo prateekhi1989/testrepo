@@ -4,7 +4,7 @@ class cm::wpconf inherits cm {
 
     $root_password = 'password'
     $db_name = 'wordpress'
-    $db_user = 'wp'
+    $db_user = 'root'
     $db_user_password = 'password'
     $db_host = 'localhost'
 

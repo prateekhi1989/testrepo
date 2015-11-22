@@ -40,5 +40,5 @@ include cm::apache
 include cm::wpconf
 include cm::php
 include cm::wp
-include cm::mysqlserver
+include cm::db
 }
