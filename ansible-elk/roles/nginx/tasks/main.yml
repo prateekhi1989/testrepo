@@ -1,11 +1,11 @@
-- name: Install Nginx
-  apt: name=nginx state=present update-cache=yes
-
-- name: create dir /var/www/kibana4
-  file: dest=/var/www/kibana4 state=directory
-
-- name: copy template to
-  file: src=kibana-reverse-proxy.conf dest=/etc/nginx/sites-enabled/kibana4 state=link
-
-- name: Start nginx service
-  service: name=nginx state=started
+---
+- hosts: apache
+  sudo: yes
+  tasks:
+    - name: install nginx
+      apt: name=nginx update_cache=yes state=latest
+    
+    - name: nginx configuration
+      template: src=kibana-reverse-proxy.conf.j2 dest=/etc/nginx/sites-enabled/default
+      notify:
+         - restart nginx
