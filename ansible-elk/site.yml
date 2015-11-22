@@ -1,0 +1,9 @@
+---
+ - hosts: apache 
+   user: root
+   sudo: yes
+   roles:
+    - elasticsearch
+    - logstash
+    - kibana
+    - nginx

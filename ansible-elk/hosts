@@ -1,0 +1,2 @@
+[apache]
+52.26.95.182 ansible_ssh_user=root

@@ -1,0 +1,7 @@
+---
+"kibana": {
+        "download_url": "https://download.elastic.co/kibana/kibana/kibana-4.1.0-linux-x64.tar.gz",
+        "install_dir": "/opt",
+        "temp_dir": "/tmp",
+        "archive": "/tmp/kibana-4.1.0-linux-x64.tar.gz"
+}

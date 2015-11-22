@@ -1,0 +1,24 @@
+---
+ - name: Download Kibana
+   get_url: url={{ kibana.download_url }} dest={{ kibana.archive }}
+   tags:
+     - kibana
+ - name: Extract Kibana to {{ kibana.install_dir }}
+   unarchive: src={{ kibana.archive }} dest={{ kibana.install_dir }} copy=no
+   tags:
+      - kibana
+
+ - name: Install Kibana init script
+   template: src=kibana4-init-script dest=/etc/init.d/kibana4 mode=0755
+   tags:
+     - kibana
+
+ - name: Register Kibana in init.d
+   command: update-rc.d kibana4 defaults
+   tags:
+     - kibana
+
+ - name: Enable and start Kibana
+   service: name=kibana4 enabled=yes state=started
+   tags:
+     - kibana

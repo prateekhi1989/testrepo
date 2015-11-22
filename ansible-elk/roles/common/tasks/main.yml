@@ -1,0 +1,12 @@
+---
+
+- name: Update apt cache
+  apt: update_cache=yes
+
+- name: Install latest packages
+  apt: name={{ item }} state=latest
+  with_items:
+    - openssl
+    - openjdk-7-jre
+  tags:
+    - base
