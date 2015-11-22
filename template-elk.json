@@ -748,7 +748,7 @@
                 "ssh -T -oStrictHostKeyChecking=no prateekhi1989@github.com \n",
                 "git clone https://prateekhi1989:xxxxxxxxx@github.com/prateekhi1989/testrepo.git \n",
                 "cp -r $pwd/testrepo/ansible-elk /opt \n",
-				"cd /opt/ansible-elk" \n,
+				"cd /opt/ansible-elk \n",
 				"ansible-playbook -i hosts site.yml \n"
                 ]
             ]
